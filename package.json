@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "gulp dev",
     "build": "gulp build",
-    "ghPages": "gulp-gh-pages"
+    "gh-pages": "gulp deploy"
   },
   "author": "dan.it education",
   "license": "ISC",
@@ -28,9 +28,5 @@
   "browserslist": [
     "last 3 version and not dead"
   ],
-  "type": "module",
-  "dependencies": {
-    "gh-pages": "^6.1.1"
-  }
+  "type": "module"
 }
-

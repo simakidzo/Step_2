@@ -11,7 +11,7 @@ const sass = gulpSass(dartSass);
 
 import bsc from "browser-sync";
 
-import ghPages  from "gulp-gh-pages";
+import ghPages from "gulp-gh-pages";
 
 const browserSync = bsc.create();
 
@@ -77,7 +77,6 @@ export const build = series(
 	parallel(htmlTaskHandler, cssTaskHandler, fontTaskHandler, imagesTaskHandler)
 );
 export const dev = series(build, browserSyncTaskHandler);
-
 
 gulp.task('deploy', function() {
 	return gulp.src('./dist/**/*')

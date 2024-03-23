@@ -7,12 +7,12 @@ import csso from "gulp-csso";
 import clean from "gulp-clean";
 import * as dartSass from "sass";
 import gulpSass from "gulp-sass";
+
+import ghPages from "gulp-gh-pages"
+
 const sass = gulpSass(dartSass);
 
 import bsc from "browser-sync";
-
-import ghPages  from "gulp-gh-pages";
-
 const browserSync = bsc.create();
 
 const htmlTaskHandler = () => {
@@ -77,7 +77,6 @@ export const build = series(
 	parallel(htmlTaskHandler, cssTaskHandler, fontTaskHandler, imagesTaskHandler)
 );
 export const dev = series(build, browserSyncTaskHandler);
-
 
 gulp.task('deploy', function() {
 	return gulp.src('./dist/**/*')
